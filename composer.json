@@ -12,7 +12,9 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.3",
         "laravelcollective/html": "^6.2",
+        "shanmuga/laravel-entrust": "^2.2",
         "unisharp/laravel-filemanager": "^2.2"
     },
     "require-dev": {

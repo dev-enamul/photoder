@@ -16,6 +16,19 @@
     <!-- Ck Editor -->
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+
+    <script src="{{asset('admin/assets')}}/js/lib/chosen/chosen.jquery.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".mySelect").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Oops, nothing found!",
+                width: "100%"
+            });
+        });
+    </script>
+
     <script>
         $('textarea').ckeditor();
         // $('.textarea').ckeditor(); // if class is prefered.
