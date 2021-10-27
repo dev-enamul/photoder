@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    @include('fontEnd.layout.top')
+    <meta charset="UTF-8">
+    @yield('top')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('fontEnd/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fontEnd/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fontEnd/css/templatemo-style.css')}}">
+<!--  
+TemplateMo 556 Catalog-Z
+
+https://templatemo.com/tm-556-catalog-z
+
+-->
 </head>
+<body>
+    <!-- Page Loader -->
+ 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar">
-<div id="main-wrapper">
-<!-- Page Preloader -->
-<div id="preloader">
-    <div id="status">
-        <div class="status-mes"></div>
-    </div>
-</div>
-<!-- preloader -->
+    @include('fontEnd.layout.include.nav')
+   
+    @include('fontEnd.layout.include.loader')
+    @yield('content')
 
-<div class="uc-mobile-menu-pusher">
-<div class="content-wrapper">
-@include('fontEnd.layout.nav')
-
-
-<!-- Feature News Section -->
-
-@yield('mainContent');
-
-@include('fontEnd.layout.footer')
-<!-- #content-wrapper -->
-
-</div>
-<!-- .offcanvas-pusher -->
-
-<a href="#" class="crunchify-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-
-@include('fontEnd.layout.mobile-nav')
-<!-- .uc-mobile-menu -->
-
-</div>
-<!-- #main-wrapper -->
-
-<!-- jquery Core-->
-@include('fontEnd.layout.bottom')
+  @include('fontEnd.layout.include.footer')
+    
+    <script src="{{asset('fontEnd/js/plugins.js')}}"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
 </body>
 </html>

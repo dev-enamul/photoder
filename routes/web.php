@@ -1,15 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\homeController;
-use App\Http\controllers\listingController;
-use App\Http\controllers\detailsController;
-use App\Http\controllers\welcomeController;
-use App\Http\Controllers\back\dashboardController; 
-use App\Http\Controllers\back\categoryController; 
-use App\Http\Controllers\back\permissionController; 
-use App\Http\Controllers\back\roleController; 
-use App\Http\Controllers\back\authorController; 
+use App\Http\controllers\photoController;
+use App\Http\controllers\videoController;
+ 
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +19,9 @@ use App\Http\Controllers\back\authorController;
 // Route::get('/', function () {
 //     return view('');
 // });
-Route::get("/",[welcomeController::class,'index']);
-Route::get("/listing",[listingController::class,'index']);
-Route::get("/details",[detailsController::class,'index']);
+Route::get("/",[photoController::class,'index']);
+Route::get("video",[videoController::class,'index']);
+
 
 Route::group(['prefix'=>'back','middleware'=>'auth'], function(){
     Route::get('/',[dashboardController::class,'index']);
