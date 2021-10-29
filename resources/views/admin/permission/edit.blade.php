@@ -30,12 +30,6 @@
                                         {{Form::label('name','Name',['class'=>'control-label'])}}
                                         {{Form::text('name',$data->name,['class'=>'form-control','id'=>'name', ] )}}
                                     </div>
-
-                                    <div class="form-group">
-                                        {{Form::label('display_name','Display Name',['class'=>'control-label',])}}
-                                        {{Form::text('display_name',$data->display_name,['class'=>'form-control','id'=>'display_name',] )}}
-                                    </div>
-
                                     <div class="form-group">
                                         {{Form::label('description','Description',['class'=>'control-label'])}}
                                         {{Form::textarea('description',$data->description,['class'=>'form-control','id'=>'description'] )}}

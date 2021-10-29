@@ -5,7 +5,7 @@
 @section('mainContent')
  
  
-<link rel="stylesheet" href="{{asset('admin/assets')}}/css/lib/datatable/dataTables.bootstrap.min.css">
+ <link rel="stylesheet" href="{{asset('admin/assets')}}/css/lib/datatable/dataTables.bootstrap.min.css">
    
 <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -20,7 +20,6 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">{{$page_name}}</a></li>
                             <li class="active">{{$page_name}} List</li>
                         </ol>
                     </div>
@@ -42,8 +41,8 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">{{$page_name}}</strong>
-                            @permission('All','Author Add')
-                            <a href="{{url('back/author/create')}}" class="btn btn-info pull-right">Create</a>
+                            @permission('All','Tag Add')
+                            <a href="{{url('back/tag/create')}}" class="btn btn-info pull-right">Create</a>
                             @endif
                         </div>
                       <div class="card-body">
@@ -52,8 +51,8 @@
                       <tr>
                         <th>Si</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th>Description</th>
+                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -62,22 +61,22 @@
                       <tr>
                         <td>{{++$i}}</td>
                         <td>{{$row->name}}</td>
-                        <td>{{$row->email}}</td>
-                        <td>
-                            @if($row->roles()->get())
-                                @foreach($row->roles()->get() as $role)
-                                    <p>{{$role->name}}</p>
-                                @endforeach
+                        <td>{{$row->description}}</td>
 
+                        <td>
+                            @if($row->status ===1)
+                                <a class="btn btn-danger" href="{{url('back/tag/status/'.$row->id)}}">Unpublish</a>
+                            @else
+                                <a class="btn btn-success" href="{{url('back/tag/status/'.$row->id)}}">Publish</a>
                             @endif
                         </td>
-                         
+
                         <td >
-                        @permission('All','Author Edit')    
-                        <a style="display:inline" href="{{url('back/author/edit/'.$row->id)}}" class="btn btn-info">Edit</a>
+                        @permission('All','Role Edit')
+                        <a style="display:inline" href="{{url('back/tag/edit/'.$row->id)}}" class="btn btn-info">Edit</a>
                         @endif
-                        @permission('All','Author Delete')
-                            {{Form::open(['url'=>['back/author/delete',$row->id],'method'=>'delete','style'=>'display:inline'])}}
+                        @permission('All','Role Delete')
+                            {{Form::open(['url'=>['back/tag/delete',$row->id],'method'=>'delete','style'=>'display:inline'])}}
                                 {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
 
                             {{Form::close()}}

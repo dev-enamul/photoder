@@ -44,7 +44,7 @@ class permissionController extends Controller
 
         $permission = new Permission();
         $permission->name = $request->name;
-        $permission->display_name = $request->display_name;
+        $permission->display_name = $request->name;
         $permission->description = $request->description;
         $permission->save();
         return redirect('back/permission')->with('success', 'Permision Created Success');
@@ -88,7 +88,7 @@ class permissionController extends Controller
 
         $permission = Permission::find($id);
         $permission->name = $request->name;
-        $permission->display_name = $request->display_name;
+        $permission->display_name = $request->name;
         $permission->description = $request->description;
         $permission->save();
         return redirect('back/permission')->with('success', 'Permision Update Success');

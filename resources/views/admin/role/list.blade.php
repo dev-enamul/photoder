@@ -42,7 +42,9 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">{{$page_name}}</strong>
+                            @permission('All','Role Add')
                             <a href="{{url('back/role/create')}}" class="btn btn-info pull-right">Create</a>
+                            @endif
                         </div>
                       <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -72,12 +74,16 @@
 
                             @endif
                         </td>
-                        <td ><a style="display:inline" href="{{url('back/role/edit/'.$row->id)}}" class="btn btn-info">Edit</a>
-
+                        <td >
+                        @permission('All','Role Edit')
+                        <a style="display:inline" href="{{url('back/role/edit/'.$row->id)}}" class="btn btn-info">Edit</a>
+                        @endif
+                        @permission('All','Role Delete')
                             {{Form::open(['url'=>['back/role/delete',$row->id],'method'=>'delete','style'=>'display:inline'])}}
                                 {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
 
                             {{Form::close()}}
+                        @endif
                       </td>
                       </tr>
                       @endforeach

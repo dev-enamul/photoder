@@ -11,7 +11,7 @@
                   <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Create Permission</strong>
+                            <strong class="card-title">{{$page_name}}</strong>
                         </div>
                         <div class="card-body">
                           <!-- Credit Card -->
@@ -25,17 +25,17 @@
                                 </div>
                                 @endif
                                   
-                                  {{ Form::open(array('url'=>'back/permission/store','method' => 'POST')) }}
+                                  {{ Form::open(array('url'=>'back/tag/store','method' => 'POST')) }}
                                   
                                     <div class="form-group">
                                         {{Form::label('name','Name',['class'=>'control-label'])}}
                                         {{Form::text('name',null,['class'=>'form-control','id'=>'name'] )}}
                                     </div>
+
                                     <div class="form-group">
                                         {{Form::label('description','Description',['class'=>'control-label'])}}
                                         {{Form::textarea('description',null,['class'=>'form-control','id'=>'description'] )}}
                                     </div>
-
                                     
                                     <div>
                                         <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">

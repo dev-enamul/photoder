@@ -16,25 +16,25 @@
                         <a href="{{url('/back')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
 
-                    @permission(['All'])
-
+                    @permission(['All','Permission List'])
                     <li class="active">
                         <a href="{{url('/back/permission')}}"> <i class="menu-icon fa fa-dashboard"></i>Permission </a>
                     </li>
-                    
+                    @endif
+
+                    @permission(['All','Role List'])
                     <li class="active">
                         <a href="{{url('/back/role')}}"> <i class="menu-icon fa fa-dashboard"></i>Roles </a>
                     </li>
+                    @endif
 
+                    @permission(['All','Author List'])
                     <li class="active">
                         <a href="{{url('/back/author')}}"> <i class="menu-icon fa fa-dashboard"></i>Author </a>
                     </li>
-
                     @endif
 
-                    <li class="active">
-                        <a href="{{url('/back/category')}}"> <i class="menu-icon fa fa-dashboard"></i>Category </a>
-                    </li>
+                     
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Permission</a>
